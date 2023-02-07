@@ -744,9 +744,12 @@
                     _template += '<td data-date="' + moment(calendar.days[i]).locale(this.params.lang).format("D") + '">';
                     if (calendar.days[i] != 0)
                     {
+                        // console.log(this.params.enabledDates.indexOf(moment(calendar.days[i]).locale(this.params.lang).format('YYYY-MM-DD')));
                         if (this.isBeforeMaxDate(moment(calendar.days[i]), false, false) === false
                             || this.isAfterMinDate(moment(calendar.days[i]), false, false) === false
-                            || this.params.disabledDays.indexOf(calendar.days[i].isoWeekday()) !== -1)
+                            || this.params.disabledDays.indexOf(calendar.days[i].isoWeekday()) !== -1
+                            || (this.params.disabledDates != null && this.params.disabledDates.indexOf(moment(calendar.days[i]).locale(this.params.lang).format('YYYY-MM-DD')) !== -1)
+                            || (this.params.enabledDates != null && this.params.enabledDates.indexOf(moment(calendar.days[i]).locale(this.params.lang).format('YYYY-MM-DD')) === -1))
                         {
                             _template += '<span class="dtp-select-day">' + moment(calendar.days[i]).locale(this.params.lang).format("DD") + '</span>';
                         } else
