@@ -3,12 +3,14 @@ Material DateTimePicker
 
 # Update
 add enable specific date and disable specific date for example
+```
 $("#input").bootstrapMaterialDatePicker({
 	weekStart: 0,
 	time: false,
 	// disabledDays: [1, 2, 3, 4, 5, 6, 7],
 	enabledDates: [1, 2, 3, 4, 5, 6, 7]
 });
+```
 
 Originaly designed for Bootstrap Material, the V2.0 is now completely standalone and responsive.
 
